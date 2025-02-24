@@ -1,6 +1,7 @@
 import React from "react";
 import { Avatar } from "antd";
 import Marquee from "react-fast-marquee";
+import SectionTitle from "../../Shared/SectionTitle";
 
 const Testimonials = () => {
   const data = [
@@ -48,9 +49,7 @@ const Testimonials = () => {
 
   return (
     <div className="py-12 px-6 sm:px-12 lg:px-24">
-      <h2 className="text-4xl font-extrabold text-center mb-12">
-        What Our Customers Say
-      </h2>
+    <SectionTitle title="Testimonials"></SectionTitle>
       <Marquee pauseOnHover={true} speed={40}>
         {data.map((testimonial, index) => (
           <div

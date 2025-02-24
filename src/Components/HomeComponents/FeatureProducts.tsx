@@ -97,13 +97,13 @@ const FeatureProducts = () => {
 
 
   return (
-    <div className="bg-primary md:py-20">
+    <div className=" md:py-20">
     <SectionTitle title="Feature Products" />
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {data.map((product) => (
         <div
           key={product._id}
-          className=" border rounded-lg bg-[#121213] md:h-[500px]"
+          className=" border rounded-lg bg-neutral-800 md:h-[500px]"
     
         >
           <img
