@@ -30,9 +30,10 @@ const NavBar = () => {
 
   const labels = [
     { name: "Home", link: "/" },
-    { name: "Competition", link: "/competition-rooms" },
-    { name: "Profile", link: "/user-profile" },
+    { name: "Cars", link: "/cars" },
+    { name: "About Us", link: "/about-us" },
     { name: "Contact Us", link: "/contact-us" },
+    
   ];
 
   const handleMobileMenuClick = () => {
@@ -58,11 +59,11 @@ const NavBar = () => {
         },
       }}
     >
-      <div className=" w-[100%] bg-transparent">
+      <div className=" w-[100%] bg-primary text-white">
         <div className="container mx-auto flex items-center justify-center py-4 px-6 lg:px-8">
           <div className="flex items-center w-full h-full">
             <Link to="/">
-              <p className="mb-0 text-3xl font-bold">Logo</p>
+              <p className="mb-0 text-3xl font-bold ">LuxeRides</p>
               {/* <Image
                 src={AllImages.logo}
                 alt="logo"
@@ -72,7 +73,7 @@ const NavBar = () => {
 
             <div className="lg:hidden ml-auto">
               <Button
-                icon={<RxHamburgerMenu className="text-black" />}
+                icon={<RxHamburgerMenu className="text-white" />}
                 onClick={handleMobileMenuClick}
               />
             </div>
@@ -88,7 +89,7 @@ const NavBar = () => {
                 </Link>
               ))}
               <Link to="/auth/login">
-                <button className=" bg-primary text-white px-10 py-3 rounded-md shadow-lg">
+                <button className=" border text-white px-10 py-3 rounded-md shadow-lg">
                   Log In
                 </button>
               </Link>
