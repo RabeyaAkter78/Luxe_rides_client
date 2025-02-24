@@ -9,7 +9,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 const NavBar = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
-  // const [selected, setSelected] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -33,6 +32,7 @@ const NavBar = () => {
     { name: "Cars", link: "/cars" },
     { name: "About Us", link: "/about-us" },
     { name: "Contact Us", link: "/contact-us" },
+    { name: "Dashboard", link: "/dashboard" },
     
   ];
 
@@ -41,7 +41,6 @@ const NavBar = () => {
   };
 
   const select = (index) => {
-    // setSelected(index);
     if (isMobile) {
       setDrawerVisible(false);
     }
@@ -64,11 +63,6 @@ const NavBar = () => {
           <div className="flex items-center w-full h-full">
             <Link to="/">
               <p className="mb-0 text-3xl font-bold ">LuxeRides</p>
-              {/* <Image
-                src={AllImages.logo}
-                alt="logo"
-                className="lg:h-11 h-16 w-auto rounded-full"
-              /> */}
             </Link>
 
             <div className="lg:hidden ml-auto">
