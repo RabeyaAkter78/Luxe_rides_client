@@ -5,7 +5,7 @@ import download from "../../assets/images/download.png";
 import downloadm from "../../assets/images/downloadm.jfif";
 const GuideLine = () => {
   return (
-    <div className="bg-neutral-50 md:py-20">
+    <div className="bg-neutral-50 py-10 md:py-20 px-2 md:px-0">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <div className="border border-neutral-200 p-5 flex flex-col items-center  rounded-xl">

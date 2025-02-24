@@ -8,27 +8,33 @@ import SignUp from "../Pages/Auth/Sign-up";
 import ForgotPassword from "../Pages/Auth/Forgot-password";
 import Verification from "../Pages/Auth/Verification";
 import ConfirmPassword from "../Pages/Auth/Confirm-Password";
+import DashboardLayout from "../Pages/Dashboard/layout";
+import AllProducts from "../Components/ProductsComponents/All-Products";
 
 export const router = createBrowserRouter([
   {
     path: "/auth/login",
-    element: <Login/>,
+    element: <Login />,
   },
   {
     path: "/auth/sign-up",
-    element: <SignUp/>,
+    element: <SignUp />,
   },
   {
     path: "/auth/forget-password",
-    element: <ForgotPassword/>,
+    element: <ForgotPassword />,
   },
   {
     path: "/auth/varification",
-    element: <Verification/>,
+    element: <Verification />,
   },
   {
     path: "/auth/confirm-password",
-    element: <ConfirmPassword/>,
+    element: <ConfirmPassword />,
+  },
+  {
+    path: "/dashboard",
+    element:<DashboardLayout/>
   },
   {
     path: "/",
@@ -39,6 +45,14 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path:"/all-products",
+        element:<AllProducts/>
+      }
+      {
+        path:"/product-details",
+        element:<AllProducts/>
+      }
     ],
   },
 ]);

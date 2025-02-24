@@ -1,80 +1,101 @@
-import React from "react";
-import { Avatar } from "antd";
-import Marquee from "react-fast-marquee";
-import SectionTitle from "../../Shared/SectionTitle";
+import React from 'react';
+import { FaStar } from 'react-icons/fa6';
+import SectionTitle from '../../Shared/SectionTitle';
 
 const Testimonials = () => {
-  const data = [
-    {
-      name: "Mr Alex Smith",
-      role: "Satisfied Customer",
-      image:
-        "https://media.istockphoto.com/id/1490616593/photo/portrait-of-pleased-young-man.webp?a=1&b=1&s=612x612&w=0&k=20&c=Mcxk-7ZmRtyRUEJ_6Wpovzj6I3yIj6lcc6iQlrlHjQg=",
-      message:
-        "LuxeRides car showroom has completely transformed my driving experience. The cars are top-notch, and the customer service is impeccable!",
-    },
-    {
-      name: "Jane Smith",
-      role: "Satisfied Customer",
-      image:
-        "https://media.istockphoto.com/id/175440771/photo/handsome-young-man-gesturing-thumbs-up-isolated.jpg?s=612x612&w=0&k=20&c=RMLEXPrDjwFg7uPb_Ri3KqpYF0BAEPjzloAB81viyCk=",
-      message:
-        "From the moment I stepped into the showroom, I was blown away by their professionalism and range of cars. Highly recommend!",
-    },
-    {
-      name: "John Doe",
-      role: "Car Enthusiast",
-      image:
-        "https://media.istockphoto.com/id/1498992722/photo/portrait-of-smiling-entrepreneur-showing-thumbs-up-and-messaging-on-smartphone-on-yellow.jpg?s=612x612&w=0&k=20&c=X1rBwaBXebL-fxc__LuNaFKQh92bFPgdZDFaB5P-Fo8=",
-      message:
-        "The best car showroom in town. They offer amazing deals and the latest models. I wouldn’t go anywhere else!",
-    },
-    {
-        name: "Jane Smith",
-        role: "Satisfied Customer",
-        image:
-          "https://media.istockphoto.com/id/175440771/photo/handsome-young-man-gesturing-thumbs-up-isolated.jpg?s=612x612&w=0&k=20&c=RMLEXPrDjwFg7uPb_Ri3KqpYF0BAEPjzloAB81viyCk=",
-        message:
-          "From the moment I stepped into the showroom, I was blown away by their professionalism and range of cars. Highly recommend!",
-      },
-      {
-        name: "John Doe",
-        role: "Car Enthusiast",
-        image:
-          "https://media.istockphoto.com/id/1498992722/photo/portrait-of-smiling-entrepreneur-showing-thumbs-up-and-messaging-on-smartphone-on-yellow.jpg?s=612x612&w=0&k=20&c=X1rBwaBXebL-fxc__LuNaFKQh92bFPgdZDFaB5P-Fo8=",
-        message:
-          "The best car showroom in town. They offer amazing deals and the latest models. I wouldn’t go anywhere else!",
-      },
-  ];
-
-  return (
-    <div className="py-12 px-6 sm:px-12 lg:px-24">
-    <SectionTitle title="Testimonials"></SectionTitle>
-      <Marquee pauseOnHover={true} speed={40}>
-        {data.map((testimonial, index) => (
-          <div
-            key={index}
-            className="p-8 m-4 shadow-xl rounded-2xl bg-white border-2 flex-shrink-0"
-          >
-            <div className="flex flex-col items-center">
-              <Avatar
-                size={100}
-                src={testimonial.image}
-                className="border-4 border-white shadow-lg"
-              />
-              <h3 className="text-2xl font-bold text-gray-800 mt-4">
-                {testimonial.name}
-              </h3>
-              <p className="text-gray-600 text-lg">{testimonial.role}</p>
+    return (
+        <div className='container mx-auto md:mt-20 px-2 md:px-0'>
+          <SectionTitle title='What Our Customers Say About Us'/>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:mr-20 mb-5'>
+                <div className='border p-3 rounded-lg'>
+                    <div>
+                        <div className='flex gap-2 mb-3'>
+                            <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                        </div>
+                        <p>"The best car dealership experience I've ever had! Great selection and amazing customer service. Highly recommended!"</p>
+                        <div className="flex justify-start items-center gap-2">
+                            <div>
+                                <h1 className="text-xl font-semibold">John Doe</h1>
+                                <p className="text-xs text-neutral-500">Los Angeles, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='border p-3 rounded-lg'>
+                    <div>
+                        <div className='flex gap-2 mb-3'>
+                            <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                        </div>
+                        <p>"I found my dream car at an unbeatable price. The whole process was smooth and hassle-free. Thank you!"</p>
+                        <div className="flex justify-start items-center gap-2">
+                            <div>
+                                <h1 className="text-xl font-semibold">Emily Carter</h1>
+                                <p className="text-xs text-neutral-500">New York, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='border p-3 rounded-lg'>
+                    <div>
+                        <div className='flex gap-2 mb-3'>
+                            <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                        </div>
+                        <p>"Excellent service and great deals. The team was very professional and helped me choose the perfect car for my needs."</p>
+                        <div className="flex justify-start items-center gap-2">
+                            <div>
+                                <h1 className="text-xl font-semibold">Michael Smith</h1>
+                                <p className="text-xs text-neutral-500">Chicago, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p className="text-center mt-4 text-lg leading-relaxed">
-              "{testimonial.message}"
-            </p>
-          </div>
-        ))}
-      </Marquee>
-    </div>
-  );
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:ml-20'>
+                <div className='border p-3 rounded-lg'>
+                    <div>
+                        <div className='flex gap-2 mb-3'>
+                            <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                        </div>
+                        <p>"Fast and easy car buying process. I was impressed with the transparency and honesty of the team."</p>
+                        <div className="flex justify-start items-center gap-2">
+                            <div>
+                                <h1 className="text-xl font-semibold">Sarah Williams</h1>
+                                <p className="text-xs text-neutral-500">Dallas, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='border p-3 rounded-lg'>
+                    <div>
+                        <div className='flex gap-2 mb-3'>
+                            <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                        </div>
+                        <p>"I got an amazing deal on my new car! The financing options were great, and the staff was very helpful."</p>
+                        <div className="flex justify-start items-center gap-2">
+                            <div>
+                                <h1 className="text-xl font-semibold">David Johnson</h1>
+                                <p className="text-xs text-neutral-500">Miami, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='border p-3 rounded-lg'>
+                    <div>
+                        <div className='flex gap-2 mb-3'>
+                            <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                        </div>
+                        <p>"A fantastic experience from start to finish. The staff was knowledgeable and guided me through every step of the way."</p>
+                        <div className="flex justify-start items-center gap-2">
+                            <div>
+                                <h1 className="text-xl font-semibold">Olivia Brown</h1>
+                                <p className="text-xs text-neutral-500">San Francisco, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Testimonials;
