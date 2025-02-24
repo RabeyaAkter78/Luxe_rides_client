@@ -1,11 +1,38 @@
-import { Checkbox, Form, Input ,Typography } from "antd";
+import { Checkbox, Form, Input, message, Typography } from "antd";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useLoginMutation } from "../../redux/features/auth/authApi";
+import { verifyToken } from "../../utils/verifyToken";
+import { useDispatch } from "react-redux";
+import { setUser, TUser } from "../../redux/features/auth/authSlice";
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
-  };
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [login] = useLoginMutation();
+
+  const onFinish = async (values:any) => {
+    const userInfo = {
+        email: values.email,
+        password: values.password
+    }
+    // console.log("Received values of form: ", userInfo);
+    try{
+      
+     
+        const res = await login(userInfo).unwrap();
+        const user = verifyToken(res.data.accessToken) as TUser;
+      //   console.log("dispatchUser", user);
+        dispatch(setUser({ user: user, token: res.data.accessToken }));
+        message.success(res?.message);
+        navigate("/");
+    ;
+
+   }catch(err:any){
+      message.error(err?.data?.message)
+   }
+
+};
   return (
     <div className="bg-black h-[100vh] py-16 md:py-0 md:h-[100vh] w-full flex items-center justify-center">
       <Form
@@ -71,8 +98,10 @@ const Login = () => {
           </Link>
         </p>
         <Form.Item className="text-center">
-          <button
-            className="text-center w-full  p-2 font-bold text-2xl  border rounded-md  text-white"          type="submit"
+          <button 
+        
+            className="text-center w-full  p-2 font-bold text-2xl  border rounded-md  text-white"
+            type="submit"
           >
             Log In
           </button>
