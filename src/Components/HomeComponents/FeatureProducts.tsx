@@ -5,8 +5,8 @@ import {Link, Links} from "react-router-dom";
 const FeatureProducts = () => {
   const data = [
     {
-      _id: "67668fdd6010ecba47f41168",
-      brand: "BMWwwwwwwwwwwwww",
+      _id: "1",
+      brand: "BMW",
       model: "Camry",
       year: 2024,
       price: 25000,
@@ -21,7 +21,7 @@ const FeatureProducts = () => {
         "https://res.cloudinary.com/dpvqcjwud/image/upload/v1740380732/image2_g9xin7.jpg",
     },
     {
-      _id: "67668fdd6010ecba47f41169",
+      _id: "2",
       brand: "Toyota",
       model: "Corolla",
       year: 2023,
@@ -37,7 +37,7 @@ const FeatureProducts = () => {
         "https://res.cloudinary.com/dpvqcjwud/image/upload/v1740380732/image2_g9xin7.jpg",
     },
     {
-      _id: "67668fdd6010ecba47f41170",
+      _id: "3",
       brand: "Ford",
       model: "F-150",
       year: 2022,
@@ -53,7 +53,7 @@ const FeatureProducts = () => {
         "https://res.cloudinary.com/dpvqcjwud/image/upload/v1740380732/image2_g9xin7.jpg",
     },
     {
-      _id: "67668fdd6010ecba47f41171",
+      _id: "4",
       brand: "Honda",
       model: "Civic",
       year: 2024,
@@ -69,7 +69,7 @@ const FeatureProducts = () => {
         "https://res.cloudinary.com/dpvqcjwud/image/upload/v1740380732/image2_g9xin7.jpg",
     },
     {
-      _id: "67668fdd6010ecba47f41172",
+      _id: "5",
       brand: "Chevrolet",
       model: "Malibu",
       year: 2023,
@@ -85,7 +85,7 @@ const FeatureProducts = () => {
         "https://res.cloudinary.com/dpvqcjwud/image/upload/v1740380732/image2_g9xin7.jpg",
     },
     {
-      _id: "67668fdd6010ecba47f41173",
+      _id: "6",
       brand: "Audi",
       model: "A4",
       year: 2023,
