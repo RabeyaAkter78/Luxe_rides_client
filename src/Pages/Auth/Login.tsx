@@ -5,34 +5,33 @@ import { useLoginMutation } from "../../redux/features/auth/authApi";
 import { verifyToken } from "../../utils/verifyToken";
 import { useDispatch } from "react-redux";
 import { setUser, TUser } from "../../redux/features/auth/authSlice";
-
+import toast, { Toaster } from "react-hot-toast";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [login] = useLoginMutation();
-
-  const onFinish = async (values:any) => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const onFinish = async (values: any) => {
     const userInfo = {
-        email: values.email,
-        password: values.password
-    }
-    // console.log("Received values of form: ", userInfo);
-    try{
-      
-     
-        const res = await login(userInfo).unwrap();
-        const user = verifyToken(res.data.accessToken) as TUser;
-      //   console.log("dispatchUser", user);
-        dispatch(setUser({ user: user, token: res.data.accessToken }));
-        message.success(res?.message);
+      email: values.email,
+      password: values.password,
+    };
+    try {
+      const res = await login(userInfo).unwrap();
+      if (res.status) {
         navigate("/");
-    ;
-
-   }catch(err:any){
-      message.error(err?.data?.message)
-   }
-
-};
+        console.log(res);
+        toast.success("Login Successfully");
+      }
+      const user = verifyToken(res.data.accessToken) as TUser;
+      //   console.log("dispatchUser", user);
+      dispatch(setUser({ user: user, token: res.data.accessToken }));
+      localStorage.setItem("user", JSON.stringify(user));
+      // navigate("/");
+    } catch (err: any) {
+      message.error(err?.data?.message);
+    }
+  };
   return (
     <div className="bg-black h-[100vh] py-16 md:py-0 md:h-[100vh] w-full flex items-center justify-center">
       <Form
@@ -98,8 +97,7 @@ const Login = () => {
           </Link>
         </p>
         <Form.Item className="text-center">
-          <button 
-        
+          <button
             className="text-center w-full  p-2 font-bold text-2xl  border rounded-md  text-white"
             type="submit"
           >
