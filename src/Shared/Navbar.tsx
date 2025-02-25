@@ -29,7 +29,7 @@ const NavBar = () => {
 
   const labels = [
     { name: "Home", link: "/" },
-    { name: "Cars", link: "/cars" },
+    { name: "Cars", link: "/all-products" },
     { name: "About Us", link: "/about-us" },
     { name: "Contact Us", link: "/contact-us" },
     { name: "Dashboard", link: "/dashboard" },

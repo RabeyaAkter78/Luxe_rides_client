@@ -112,7 +112,7 @@ const FeatureProducts = () => {
               key={product._id}
               className=" border rounded-lg bg-neutral-800 md:h-[500px]"
             >
-              <Link to="product-details">
+              <Link to="/product-details">
               <img
                 className="w-full md:h-80 object-cover cursor-pointer "
                 src={product.image}
