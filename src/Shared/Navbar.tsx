@@ -1,6 +1,3 @@
-
-
-
 import { useEffect, useState } from "react";
 import "antd/dist/reset.css";
 import { Button, ConfigProvider, Drawer, Tooltip } from "antd";
@@ -10,6 +7,9 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  const user = localStorage.getItem("user");
+  console.log("user", user);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -33,7 +33,6 @@ const NavBar = () => {
     { name: "About Us", link: "/about-us" },
     { name: "Contact Us", link: "/contact-us" },
     { name: "Dashboard", link: "/dashboard" },
-    
   ];
 
   const handleMobileMenuClick = () => {
@@ -75,9 +74,7 @@ const NavBar = () => {
             <div className="hidden lg:flex items-center ml-auto space-x-4 mb-0">
               {labels.map((item, index) => (
                 <Link to={item.link} key={index}>
-                  <button
-                    className={`px-4 font-medium text-lg `}
-                  >
+                  <button className={`px-4 font-medium text-lg `}>
                     {item.name}
                   </button>
                 </Link>
