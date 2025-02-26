@@ -14,7 +14,7 @@ const NavBar = () => {
 
   // const dispatch = useAppDispatch();
   const handleLogout = () => {
-    dispatch(logout());
+    // dispatch(logout());
     navigate('/login');
     toast.success("Logout Success");
   };
