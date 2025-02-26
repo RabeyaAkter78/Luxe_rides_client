@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import about2 from "../../assets/images/about2.jpg";
+// import about2 from "../../../public/image/imageAbout.jpg";
 import React from "react";
 
 const AboutUs = () => {
@@ -12,7 +12,7 @@ const AboutUs = () => {
     return (
         <div className="relative w-full h-screen flex flex-col md:flex-row">
             <div className="md:w-1/2 h-full bg-cover bg-center">
-                <img src={about2} alt="Car" className="w-full h-full object-cover" />
+                <img src="../../../public/image/imageAbout.jpg" alt="Car" className="w-full h-full object-cover" />
             </div>
             
             <div className="md:w-1/2 h-full flex items-center justify-center bg-black bg-opacity-90 p-6 md:p-12 lg:p-24">

@@ -1,12 +1,12 @@
 import React from "react";
-import banner from "../../assets/images/banner.mp4";
+// import banner from "../../assets/images/banner.mp4";
 import { Link } from "react-router-dom";
 
 const Banner: React.FC = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <video
-        src={banner}
+        src="/banner.mp4"
         autoPlay
         loop
         muted
