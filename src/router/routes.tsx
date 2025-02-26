@@ -10,6 +10,8 @@ import Verification from "../Pages/Auth/Verification";
 import ConfirmPassword from "../Pages/Auth/Confirm-Password";
 import DashboardLayout from "../Pages/Dashboard/layout";
 import AllProducts from "../Components/ProductsComponents/All-Products";
+import ProductDetails from "../Components/ProductsComponents/ProductDetails";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -51,7 +53,11 @@ export const router = createBrowserRouter([
       },
       {
         path:"/product-details",
-        element:<AllProducts/>
+        element:<ProductDetails/>
+      },
+      {
+        path:"/about-us",
+        element:<AboutUs/>
       }
     ],
   },
