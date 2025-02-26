@@ -1,8 +1,5 @@
 import React from "react";
-// import key from "/key.png";
-// import wheel from "../../assets/images/wheel.png";
-// import download from "../../assets/images/download.png";
-// import downloadm from "../../assets/images/downloadm.jfif";
+
 const GuideLine = () => {
   return (
     <div className="bg-neutral-50 py-10 md:py-20 px-2 md:px-0">
