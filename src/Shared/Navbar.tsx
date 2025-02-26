@@ -3,13 +3,21 @@ import "antd/dist/reset.css";
 import { Button, ConfigProvider, Drawer, Tooltip } from "antd";
 import { RxHamburgerMenu } from "react-icons/rx";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 const NavBar = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+  const navigate = useNavigate();
   const user = localStorage.getItem("user");
   console.log("user", user);
+
+  // const dispatch = useAppDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/login');
+    toast.success("Logout Success");
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -85,21 +93,14 @@ const NavBar = () => {
                 </button>
               </Link>
               {/* Sign in sign out */}
-              {/* {!session ? (
+               {/* {!session ? (
                 <Link to="/sign-in">
                  <button className=" bg-gradient-to-r from-red-900 to-red-700  text-white px-10 py-3 rounded-md shadow-lg">Join Now</button>
                 </Link>
               ) : (
                 <Tooltip title={session.user?.name}>
                   <div className="flex items-center space-x-2">
-                    <Image
-                      height={5}
-                      width={5}
-                      src={session.user?.image || AllImages.UserImg}
-                      alt="user Image"
-                      className="h-10 w-10 border border-neutral-500 rounded-full cursor-pointer"
-                      onClick={() => signOut()}
-                    />
+                    <p>{session.user?.name}</p>
                     <span
                       className="font-medium text-lg cursor-pointer"
                       onClick={() => signOut()}
@@ -108,7 +109,7 @@ const NavBar = () => {
                     </span>
                   </div>
                 </Tooltip>
-              )} */}
+              )}  */}
             </div>
           </div>
         </div>
