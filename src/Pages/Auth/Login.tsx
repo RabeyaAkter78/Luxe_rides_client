@@ -5,7 +5,7 @@ import { useLoginMutation } from "../../redux/features/auth/authApi";
 import { verifyToken } from "../../utils/verifyToken";
 import { useDispatch } from "react-redux";
 import { setUser, TUser } from "../../redux/features/auth/authSlice";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(user));
       // navigate("/");
     } catch (err: any) {
-      message.error(err?.data?.message);
+      // message.error(err?.data?.message);
     }
   };
   return (

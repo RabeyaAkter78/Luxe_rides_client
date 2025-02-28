@@ -11,10 +11,7 @@ import ConfirmPassword from "../Pages/Auth/Confirm-Password";
 import DashboardLayout from "../Pages/Dashboard/layout";
 import AllProducts from "../Components/ProductsComponents/All-Products";
 import ProductDetails from "../Components/ProductsComponents/ProductDetails";
-<<<<<<< HEAD
 import AboutUs from "../Pages/AboutUs/AboutUs";
-=======
->>>>>>> cd27e1d9ac87b7570d3c7e6dc78e8f8ec3edaa69
 
 export const router = createBrowserRouter([
   {
@@ -55,15 +52,12 @@ export const router = createBrowserRouter([
         element:<AllProducts/>
       },
       {
-        path:"/product-details",
-        element:<ProductDetails/>
-<<<<<<< HEAD
-      },
-      {
         path:"/about-us",
         element:<AboutUs/>
-=======
->>>>>>> cd27e1d9ac87b7570d3c7e6dc78e8f8ec3edaa69
+      },
+      {
+        path:"/product-details",
+        element:<ProductDetails/>
       }
     ],
   },
